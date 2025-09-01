@@ -1,0 +1,31 @@
+{
+  "name": "lgmu-messenger",
+  "version": "1.0.0",
+  "description": "Secure cross-platform messenger with Telegram-like features",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "nodemon server/src/index.ts",
+    "client:dev": "cd client && npm run dev",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "start": "npm run start:server & npm run start:client",
+    "start:server": "cd server && npm start",
+    "start:client": "cd client && npm start",
+    "electron": "cd client && npm run electron",
+    "package": "cd client && npm run package"
+  },
+  "keywords": ["messenger", "chat", "secure", "cross-platform"],
+  "author": "LGMU Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2",
+    "typescript": "^5.3.3"
+  },
+  "workspaces": [
+    "server",
+    "client"
+  ]
+}
