@@ -10,11 +10,4 @@ router.get('/health', (req, res) => {
   });
 });
 
-export default router;    path: req.originalUrl,
-    method: req.method
-  });
-});
-
-export function setupRoutes(app: any): void {
-  app.use(router);
-}
+export default router;
